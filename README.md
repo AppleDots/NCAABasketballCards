@@ -1,2 +1,2 @@
-# ChristmasCardGame
+# SuperSmashBrosCards
 Suffering
