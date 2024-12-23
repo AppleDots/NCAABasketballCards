@@ -1,2 +1,2 @@
-# SuperSmashBrosCards
+# ClashRoyaleCards
 Suffering
