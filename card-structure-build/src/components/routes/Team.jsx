@@ -1,7 +1,7 @@
 import NavBar from '../Navbar'
 import Footer from '../Footer'
 
-function Favorites(){
+function Team(){
 
     return(
         <>
@@ -11,4 +11,4 @@ function Favorites(){
     );
 }
 
-export default Favorites;
+export default Team;
