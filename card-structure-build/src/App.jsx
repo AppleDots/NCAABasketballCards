@@ -1,11 +1,12 @@
 
 import './App.css'
-import Home from './components/routes/Home'
+import AddCards from './components/routes/AddCards'
+//import Home from './components/routes/Home'
 function App() {
 
   return (
     <>
-     <Home/>
+     <AddCards />
     </>
   )
 }

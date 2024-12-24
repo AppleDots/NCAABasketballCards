@@ -1,10 +1,14 @@
 import NavBar from '../Navbar'
+import Footer from '../Footer'
 
 function Home(){
 
     return(
-        <NavBar />
-    )
+        <>
+            <NavBar />
+            <Footer />
+        </>
+    );
 }
 
 export default Home;
