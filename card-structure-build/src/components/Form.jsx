@@ -1,4 +1,4 @@
-import {Card} from '../addCard';
+import {Card} from '../features/addCard';
 import {useState} from 'react';
 
 //https://legacy.reactjs.org/docs/forms.html
