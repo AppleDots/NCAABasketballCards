@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { HashTable } from '../hashTable.js';
+import { HashTable } from 'hashTable.js';
 
 export class Card {
   constructor(name, image, points, rebounds, assists, accuracy) {
