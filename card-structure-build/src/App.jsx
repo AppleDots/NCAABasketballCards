@@ -1,5 +1,5 @@
 
-import './App.css'
+import './styles/App.css'
 import AddCards from './components/routes/AddCards'
 //import Home from './components/routes/Home'
 function App() {
