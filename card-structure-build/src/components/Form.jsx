@@ -1,5 +1,6 @@
 import {Card} from '../features/addCard';
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useHashtable } from '../components/HashtableContext';
 
@@ -8,7 +9,10 @@ export default function Form() {
 
     //Global HashTable
     const { hashtable, setHashtable } = useHashtable();
+    //Navigation
+    const navigate = useNavigate();
 
+    //Create card
     let card = new Card();
     const [playerCard, setPlayerCard] = useState(card);
     
@@ -51,13 +55,12 @@ export default function Form() {
     const handleSubmit = (ev) => {
         //let errors[];
         ev.preventDefault();
-        console.log(playerCard);
         hashtable.add(playerCard); 
-        
+        navigate("/");
+        return;
     }
     
    
-    //console.log(playerCard);
     return(
         <>
             <form className = "newPlayerForm" onSubmit = {handleSubmit} >

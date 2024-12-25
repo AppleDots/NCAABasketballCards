@@ -42,7 +42,7 @@ function Home(){
         );
         hashtable.add(cardPlayer); 
     });
-    console.log(hashtable);
+    
     return(
         <>
             <header>

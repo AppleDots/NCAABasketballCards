@@ -8,6 +8,7 @@
 }
 .Card img{
   text-align: center;
+  height: 10em;
 }
 .Card h2 {
   font-size: 1.5rem;
