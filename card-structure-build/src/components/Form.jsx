@@ -2,38 +2,45 @@ import {Card} from '../features/addCard';
 import {useState} from 'react';
 
 //https://legacy.reactjs.org/docs/forms.html
-function Form() {
+export default function Form() {
 
     let card = new Card();
     const [playerCard, setPlayerCard] = useState(card);
     
 
     const updatePlayerCardName = (ev) => {
-        card = new Card(ev.target.value,playerCard.image, playerCard.points, playerCard.rebounds,playerCard.assists, 1);
-        setPlayerCard(card);
+        
+        setPlayerCard((prevCard) => ({
+            ...prevCard,name: ev.target.value
+        }));
     };
     const updatePlayerCardImageURL = (ev) => {
-        card = new Card(playerCard.points,ev.target.value, playerCard.points, playerCard.rebounds,playerCard.assists, 1);
-        setPlayerCard(card);
+        setPlayerCard((prevCard) => ({
+            ...prevCard,image: ev.target.value
+        }));
+        
     };
     const updatePlayerCardPoints = (ev) => {
-        card = new Card(playerCard.name,playerCard.image, ev.target.value, playerCard.rebounds,playerCard.assists, 1);
-        setPlayerCard(card);
+        setPlayerCard((prevCard) => ({
+            ...prevCard,points: ev.target.value
+        }));
+       
     };
     const updatePlayerCardRebounds = (ev) => {
-        card = new Card(playerCard.name,playerCard.image, playerCard.points, ev.target.value,playerCard.assists, 1);
-        setPlayerCard(card);
+        setPlayerCard((prevCard) => ({
+            ...prevCard,rebounds: ev.target.value
+        }));
+        
     };
     const updatePlayerCardAssists = (ev) => {
-        card = new Card(playerCard.name,playerCard.image, playerCard.points, playerCard.rebounds,ev.target.values, 1);
-        setPlayerCard(card);
+        setPlayerCard((prevCard) => ({
+            ...prevCard,assists: ev.target.value
+        }));
+        
     };
     const handleSubmit = (ev) => {
         //let errors[];
         ev.preventDefault();
-        card = new Card(playerCard.name,playerCard.image, playerCard.points, playerCard.rebounds,playerCard.assists, 1);
-        setPlayerCard(card);
-        console.log(file);
         console.log(playerCard);
         
     }
@@ -71,4 +78,3 @@ function Form() {
     )   
 }
 
-export default Form;

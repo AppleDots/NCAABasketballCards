@@ -8,9 +8,11 @@ export class Card {
     this.image = image;
     this.points = points;
     this.rebounds = rebounds;
-    this.assits = assists;
+    this.assists = assists;
     this.accuracy = accuracy;
   }
+  
+  
 }
 
 export function AddCard() {
