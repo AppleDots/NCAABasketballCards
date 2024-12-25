@@ -33,8 +33,28 @@
   }
 }
 
-.card {
-  padding: 2em;
+main,
+header,
+footer {
+  max-width: 1600px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 600px;
+  padding: 1em;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .read-the-docs {

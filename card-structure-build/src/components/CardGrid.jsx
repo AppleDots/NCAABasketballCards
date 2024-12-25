@@ -19,8 +19,6 @@ function CardGrid() {
     return (
         <>
           <section className="Grid">
-            <h1>Players</h1>
-            
             {players.map((player) =><Card player = {player}  key = {player.id}/>)}
             </section>
         </>
