@@ -1,21 +1,10 @@
-import {useState} from 'react';
-import {useEffect} from 'react';
+
 import Card from './Card'
 import "../styles/Grid.css";
 
-function CardGrid() {
-    const [players, setPlayers] = useState([]);
-    async function fetchPlayers() {
-      const resp = await fetch("players.json");
-      const jsonResponse = await resp.json();
-      
-     
-      setPlayers(jsonResponse); 
-  
-    }
-    useEffect(() => {
-      fetchPlayers();
-    }, []);
+function CardGrid({players}) {
+    
+    
     return (
         <>
           <section className="Grid">

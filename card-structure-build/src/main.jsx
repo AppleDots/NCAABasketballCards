@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import './styles/App.css'
 import './styles/index.css'
+import { HashtableProvider } from './components/HashtableContext';
 
 //Routes
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -13,7 +14,9 @@ const router = createBrowserRouter(routes,
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <HashtableProvider>
       <RouterProvider router={router} />
+    </HashtableProvider>
   </React.StrictMode>
 );
 

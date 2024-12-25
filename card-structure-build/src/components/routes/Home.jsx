@@ -3,16 +3,16 @@ import Footer from '../Footer'
 import CardGrid from '../CardGrid'
 import {Card} from '../../features/addCard';
 
-import {HashTable} from '../../features/hashTable'
 
 import {useState} from 'react';
 import {useEffect} from 'react';
 
+import { useHashtable } from '../HashtableContext';
+
 function Home(){
-    //Create HashTable for Home Page(All Players)
-    //let card = new Card();
-    let allPlayers = new HashTable((card) => card.charCodeAt(0) * 999 + card.charCodeAt(card.length - 1) *
-    Math.pow(2, card.length - 1));
+
+    const { hashtable, setHashtable } = useHashtable();
+    
     
     //Fetching Players
     const [players, setPlayers] = useState([]);
@@ -40,9 +40,9 @@ function Home(){
             player.assists,
             player.accuracy
         );
-        allPlayers.add(cardPlayer); 
+        hashtable.add(cardPlayer); 
     });
-    console.log(allPlayers);
+    console.log(hashtable);
     return(
         <>
             <header>
@@ -50,7 +50,7 @@ function Home(){
             </header>
             <h1>Players</h1>
             <main>
-                <CardGrid />
+                <CardGrid players = {hashtable.getListFromTable()}/>
             </main>
             <Footer />
         </>

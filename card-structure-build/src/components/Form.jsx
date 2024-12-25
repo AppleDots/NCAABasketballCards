@@ -1,8 +1,13 @@
 import {Card} from '../features/addCard';
 import {useState} from 'react';
 
+import { useHashtable } from '../components/HashtableContext';
+
 //https://legacy.reactjs.org/docs/forms.html
 export default function Form() {
+
+    //Global HashTable
+    const { hashtable, setHashtable } = useHashtable();
 
     let card = new Card();
     const [playerCard, setPlayerCard] = useState(card);
@@ -36,12 +41,18 @@ export default function Form() {
         setPlayerCard((prevCard) => ({
             ...prevCard,assists: ev.target.value
         }));
+    };
+    const updatePlayerCardAccuracy = (ev) => {
+        setPlayerCard((prevCard) => ({
+            ...prevCard,accuracy: ev.target.value
+        }));
         
     };
     const handleSubmit = (ev) => {
         //let errors[];
         ev.preventDefault();
         console.log(playerCard);
+        hashtable.add(playerCard); 
         
     }
     
@@ -49,26 +60,30 @@ export default function Form() {
     //console.log(playerCard);
     return(
         <>
-            <form className = "newPlayerForm" onSubmit = {handleSubmit} noValidate>
+            <form className = "newPlayerForm" onSubmit = {handleSubmit} >
                 <div>
                     <label > Player Name</label>
-                    <input id = "name" name = "name" type = "name" value = {playerCard.name} onChange = {updatePlayerCardName} requried></input>
+                    <input id = "name" name = "name" type = "name" value = {playerCard.name} onChange = {updatePlayerCardName} required></input>
                 </div>
                 <div>
                     <label > Image </label>
-                    <input id = "image" name = "image" type="name" value = {playerCard.image} onChange = {updatePlayerCardImageURL} requried></input>
+                    <input id = "image" name = "image" type="name" value = {playerCard.image} onChange = {updatePlayerCardImageURL} required></input>
                 </div>
                 <div>
                     <label > Points</label>
-                    <input id = "points" name = "points" type = "number"value = {playerCard.points} onChange = {updatePlayerCardPoints} requried></input>
+                    <input id = "points" name = "points" type = "number" step="0.1" value = {playerCard.points} onChange = {updatePlayerCardPoints} required></input>
                 </div>
                 <div>
                     <label > Rebounds</label>
-                    <input id = "rebounds" name = "rebounds" type = "number"value = {playerCard.rebounds} onChange = {updatePlayerCardRebounds} requried></input>
+                    <input id = "rebounds" name = "rebounds" type = "number" step="0.1" value = {playerCard.rebounds} onChange = {updatePlayerCardRebounds} required></input>
                 </div>
                 <div>
                     <label > Assists</label>
-                    <input id = "assists" name = "assists" type = "number"value = {playerCard.assists} onChange = {updatePlayerCardAssists} requried></input>
+                    <input id = "assists" name = "assists" type = "number" step="0.1" value = {playerCard.assists} onChange = {updatePlayerCardAssists} required></input>
+                </div>
+                <div>
+                    <label > Accuracy</label>
+                    <input id = "accuracy" name = "accuracy" type = "number" step="0.1" value = {playerCard.accuracy} onChange = {updatePlayerCardAccuracy} required></input>
                 </div>
                 <button type = "submit">Add Card</button>
             </form>
