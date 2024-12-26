@@ -1,0 +1,16 @@
+.Card {
+  box-sizing: border-box;
+  width: 25em;
+  background-color: white;
+  border: 0.2em solid darkgray;
+  border-radius: 0.75em;
+  padding: 1em;
+}
+.Card img{
+  text-align: center;
+  height: 10em;
+}
+.Card h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}

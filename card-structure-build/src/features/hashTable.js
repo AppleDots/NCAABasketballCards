@@ -91,7 +91,7 @@ export class HashTable {
     for (let bucketIndex = 0; bucketIndex < this._buckets.length; bucketIndex++) {
       for (let cardIndex = 0; cardIndex < this._buckets[bucketIndex].length; cardIndex++) {
         cardList.push(this._buckets[bucketIndex][cardIndex]);
-        console.log(this._buckets[bucketIndex][cardIndex]);
+        //console.log(this._buckets[bucketIndex][cardIndex]);
       }
     }
     return cardList;

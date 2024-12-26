@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "name": "Eric Dixon",
+      "image": "players/EricDixon.png",
+      "points": 25.8,
+      "rebounds": 5.6,
+      "assists": 2.0,
+      "accuracy": 53.8
+    },
+    {
+      "id": 2,
+      "name": "Enoch Boakye",
+      "image": "players/EnochBoakye.png",
+      "points": 5.0,
+      "rebounds": 5.6,
+      "assists": 0.3,
+      "accuracy": 69.7
+    },
+    {
+      "id": 3,
+      "name": "Jordann Dumont",
+      "image": "players/JordannDumont.png",
+      "points": 0.8,
+      "rebounds": 0.0,
+      "assists": 0.0,
+      "accuracy": 33.3
+    },
+    {
+      "id": 4,
+      "name": "Ta'Niya Latson",
+      "image": "players/Ta'NiyaLatson.png",
+      "points": 27.2,
+      "rebounds": 4.8,
+      "assists": 4.0,
+      "accuracy": 49.8
+    },
+    {
+        "id": 5,
+        "name": "Amaya Bonner",
+        "image": "players/AmayaBonner.png",
+        "points": 2.1,
+        "rebounds": 2.7,
+        "assists": 0.8,
+        "accuracy": 25.0
+    }
+  ]
