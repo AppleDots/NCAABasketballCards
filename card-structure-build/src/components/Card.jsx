@@ -18,6 +18,7 @@ function Card({ player }) {
         <li>Points: {player.points}</li>
         <li>Accuracy: {player.accuracy}</li>
       </ul>
+      <button>Add to Favorites</button>
     </div>
   );
 }

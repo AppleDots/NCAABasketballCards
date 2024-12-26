@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { useHashtable } from '../components/HashtableContext';
 
+
+
+
 //https://legacy.reactjs.org/docs/forms.html
 export default function Form() {
 
@@ -16,7 +19,7 @@ export default function Form() {
     let card = new Card();
     const [playerCard, setPlayerCard] = useState(card);
     
-
+    
     const updatePlayerCardName = (ev) => {
         
         setPlayerCard((prevCard) => ({
@@ -53,9 +56,37 @@ export default function Form() {
         
     };
     const handleSubmit = (ev) => {
-        //let errors[];
+
+        //Add card to hashtable
         ev.preventDefault();
         hashtable.add(playerCard); 
+
+        //https://www.altcademy.com/blog/how-to-write-data-in-json-file-using-reactjs/
+        let cardData = {
+            name: playerCard.name,
+            image: playerCard.image,
+            points: playerCard.points,
+            rebound: playerCard.rebounds,
+            assists: playerCard.assists,
+            accuracy: playerCard.accuracy
+          };
+        
+        /*
+        let data = fs.readFileSync('players.json');
+        let players = JSON.parse(data);
+
+        players.push(cardData);
+        
+        console.log(fs);
+        //Write card to json file
+        fs.writeFile('players.json', JSON.stringify(players), function(err) {
+            if (err) {
+              console.log(err);
+            }
+          });
+        
+        */
+        //Navigate back to home
         navigate("/");
         return;
     }
