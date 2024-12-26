@@ -126,4 +126,14 @@ export class HashTable {
       bucket.splice(index, 1);
     }
   }
+
+  shuffle(){
+    const entries = Object.entries(this.hashtable);
+    for (let i = entries.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [entries[i], entries[j]] = [entries[j], entries[i]]; // Swap
+    }
+    return Object.fromEntries(entries);
+
+  }
 }
