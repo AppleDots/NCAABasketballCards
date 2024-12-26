@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import './styles/App.css'
 import './styles/index.css'
 import { HashtableProvider } from './components/HashtableContext';
+import { FavHashtableProvider } from './components/FavoriteHashTableContext';
 
 //Routes
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -15,7 +16,9 @@ const router = createBrowserRouter(routes,
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HashtableProvider>
-      <RouterProvider router={router} />
+      <FavHashtableProvider>
+        <RouterProvider router={router} />
+      </FavHashtableProvider>
     </HashtableProvider>
   </React.StrictMode>
 );

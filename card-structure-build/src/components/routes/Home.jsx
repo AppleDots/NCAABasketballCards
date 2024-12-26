@@ -13,7 +13,7 @@ import { useHashtable } from '../HashtableContext';
 
 function Home(){
 
-    const { hashtable, setHashtable } = useHashtable();
+    const hashtable = useHashtable();
     
     
     //Fetching Players

@@ -6,7 +6,10 @@ function AddCards() {
 
     return(
         <>
-            <NavBar />   
+            <header>
+                <NavBar />   
+            </header>
+            <h1>Add Player Cards To Collection</h1>
                 <Form />
             <Footer />
         </>

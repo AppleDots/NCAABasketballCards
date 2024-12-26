@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import {HashTable} from '../features/hashTable.js'
+import PropTypes from 'prop-types';
 
 // Create a context
 const HashtableContext = createContext();
@@ -8,11 +9,11 @@ const HashtableContext = createContext();
 
 export const HashtableProvider = ({ children }) => {
   //Create HashTable for Home Page(All Players)
-  const [hashtable, setHashtable] = useState(new HashTable((card) => card.charCodeAt(0) * 999 + card.charCodeAt(card.length - 1) *
+  const [hashtable] = useState(new HashTable((card) => card.charCodeAt(0) * 999 + card.charCodeAt(card.length - 1) *
   Math.pow(2, card.length - 1)));
 
   return (
-    <HashtableContext.Provider value={{ hashtable, setHashtable }}>
+    <HashtableContext.Provider value={hashtable}>
       {children}
     </HashtableContext.Provider>
   );

@@ -3,12 +3,13 @@ import "../styles/Card.css";
 import { useHashtable } from './FavoriteHashTableContext';
 import PropTypes from 'prop-types';
 
-function Card({ player }) {
+function FavCard({ player }) {
+  console.log('Hello');
   const favTable = useHashtable();
   console.log(favTable);
 
   const buttonClick = () => {
-    favTable.add(player)
+    favTable.delete(player)
     console.log(favTable);
   }
   
@@ -28,9 +29,9 @@ function Card({ player }) {
         <li>Assists: {player.assists}</li>
         <li>Accuracy: {player.accuracy}</li>
       </ul>
-      <button onClick={buttonClick}>Add to Favorites</button>
+      <button onClick={buttonClick}>Remove From Favorites</button>
     </div>
   );
 }
 
-export default Card;
+export default FavCard;
