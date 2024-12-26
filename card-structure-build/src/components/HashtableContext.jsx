@@ -21,3 +21,7 @@ export const HashtableProvider = ({ children }) => {
 
 // Hook to use the context
 export const useHashtable = () => useContext(HashtableContext);
+
+HashtableProvider.propTypes = {
+  children: PropTypes.object,
+};

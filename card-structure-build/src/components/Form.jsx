@@ -11,7 +11,7 @@ import { useHashtable } from '../components/HashtableContext';
 export default function Form() {
 
     //Global HashTable
-    const { hashtable, setHashtable } = useHashtable();
+    const hashtable = useHashtable();
     //Navigation
     const navigate = useNavigate();
 
@@ -62,14 +62,14 @@ export default function Form() {
         hashtable.add(playerCard); 
 
         //https://www.altcademy.com/blog/how-to-write-data-in-json-file-using-reactjs/
-        let cardData = {
-            name: playerCard.name,
-            image: playerCard.image,
-            points: playerCard.points,
-            rebound: playerCard.rebounds,
-            assists: playerCard.assists,
-            accuracy: playerCard.accuracy
-          };
+        // let cardData = {
+        //     name: playerCard.name,
+        //     image: playerCard.image,
+        //     points: playerCard.points,
+        //     rebound: playerCard.rebounds,
+        //     assists: playerCard.assists,
+        //     accuracy: playerCard.accuracy
+        //   };
         
         /*
         let data = fs.readFileSync('players.json');

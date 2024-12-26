@@ -23,5 +23,5 @@ export function FavHashtableProvider(props) {
 export const useHashtable = () => useContext(FavHashtableContext);
 
 FavHashtableProvider.propTypes = {
-  children: PropTypes.router,
+  children: PropTypes.object,
 };
