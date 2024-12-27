@@ -3,7 +3,7 @@ import Footer from '../Footer'
 import CardGrid from '../CardGrid'
 import { useHashtable } from '../FavoriteHashTableContext';
 
-function Favorites(){
+function Favorites() {
     const favTable = useHashtable();
     return(
         <>
