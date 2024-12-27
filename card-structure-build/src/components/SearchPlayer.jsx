@@ -6,11 +6,12 @@ import {useState} from 'react';
 import {useEffect} from 'react';
 
 import { useHashtable } from './HashtableContext';
+import CardGrid from './CardGrid';
 
 export default function SearchPlayer() {
-    const card = new Card();
+    
     const [search,setSearch] = useState("");
-    const [player, setPlayer] = useState(card);
+    const [player, setPlayer] = useState(null);
     
     const hashtable = useHashtable(); 
 
@@ -18,10 +19,10 @@ export default function SearchPlayer() {
         setSearch(ev.target.value);
     }
     async function fetchCard() {
-        let response = hashtable.findCardFromName(search + "");
+        const response = hashtable.findCardFromName(search);
         //console.log(response);
         console.log(search);
-       if(response == 0){
+       if(response === 0){
         setPlayer(null);
        }else{
         setPlayer(response);
@@ -31,10 +32,7 @@ export default function SearchPlayer() {
       }
     
       useEffect(() => {
-        if (search == "") {
-            setPlayer(null); 
-        } else {
-            console.log(search);
+        if (search !== "") {
             fetchCard();
         }
       }, [search]);
@@ -42,10 +40,10 @@ export default function SearchPlayer() {
     return(
         <>
             <form className = "searchForm" >
-                <input name = "search" id = "search "type = "search" value = {search} onChange = {updateSearch}></input>
+                <input name = "search" id = "search "type = "search" value = {search} onChange = {updateSearch} />
             </form>
             {player ? (
-                <Card player={player} />
+                <CardGrid players={[player]} />
             ) : (
                 <p>No player found.</p>
             )}
