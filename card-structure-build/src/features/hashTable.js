@@ -115,6 +115,7 @@ export class HashTable {
         return card;
       }
     }
+    //const notFoundcard = new Card();
     return 0;
   }
 
@@ -128,12 +129,29 @@ export class HashTable {
   }
 
   shuffle(){
-    const entries = Object.entries(this.hashtable);
-    for (let i = entries.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [entries[i], entries[j]] = [entries[j], entries[i]]; // Swap
+    const cardList = this.getListFromTable();
+
+    //Fisher–Yates shuffle
+    console.log(cardList);
+
+    
+    for(let i = 0; i < cardList.length; i++){
+
+      let randPosition = (Math.floor(Math.random()
+      * (i - 0 + 1)) + 0);
+      
+      let temp = cardList[i];
+      cardList[i]= cardList[randPosition];
+      cardList[randPosition] = temp;
+
     }
-    return Object.fromEntries(entries);
+    //Write down the numbers from 1 through N.
+    //Pick a random number k between one and the number of unstruck numbers remaining (inclusive).
+    //Counting from the low end, strike out the kth number not yet struck out, and write it down at the end of a separate list.
+    //Repeat from step 2 until all the numbers have been struck out.
+    //The sequence of numbers written down in step 3 is now a random permutation of the original numbers.
+    
+    return cardList;
 
   }
 }

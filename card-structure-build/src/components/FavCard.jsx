@@ -1,15 +1,20 @@
 import "../styles/FavCard.css";
 import { useHashtable } from './FavoriteHashTableContext';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 function FavCard(props) {
-  console.log('Hello');
+
+  //Navigation
+  const navigate = useNavigate();
   const favTable = useHashtable();
-  console.log(favTable);
 
   const buttonClick = () => {
     favTable.delete(props.player)
     console.log(favTable);
+    //Navigate back to home
+    navigate("/");
+    return;
   }
   
   return (

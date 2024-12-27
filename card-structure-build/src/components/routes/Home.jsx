@@ -1,8 +1,6 @@
 import NavBar from '../Navbar'
 import Footer from '../Footer'
 import CardGrid from '../CardGrid'
-import SelectForm from '../SelectForm'
-
 import {Card} from '../../features/addCard';
 
 
@@ -14,8 +12,8 @@ import { useHashtable } from '../HashtableContext';
 function Home(){
 
     const hashtable = useHashtable();
-    
-    
+    const [listOfPlayers, setListOfPlayers] = useState(hashtable.getListFromTable());
+
     //Fetching Players
     const [players, setPlayers] = useState([]);
 
@@ -48,18 +46,19 @@ function Home(){
     //shuffle cards
     const handleSubmit = (ev) => {
         ev.preventDefault();
-        hashtable.shuffle();
+        setListOfPlayers(hashtable.shuffle());
     };
+
     return(
         <>
             <header>
                 <NavBar />
             </header>
             <h1>Players</h1>
-            <SelectForm />
-            <button className="shuffle" onClick={handleSubmit}>Shuffle</button>
+            
+                <button className="shuffle" onClick={handleSubmit}>Shuffle</button>
             <main>
-                <CardGrid players = {hashtable.getListFromTable()}/>
+                <CardGrid players = {listOfPlayers}/>
             </main>
             <Footer />
         </>

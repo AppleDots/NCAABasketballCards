@@ -1,18 +1,48 @@
-.Card {
+
+/*Card Flip 
+https://www.w3schools.com/howto/howto_css_flip_card.asp
+*/
+.container {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
   box-sizing: border-box;
   width: 25em;
-  background-color: white;
+  height: 25em;
+  perspective: 1000px;
+}
+
+.Card {
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
   border: 0.2em solid darkgray;
   border-radius: 0.75em;
-  padding: 1em;
 }
-.Card img{
-  text-align: center;
-  height: 10em;
+
+.container:hover .Card {
+  transform: rotateY(180deg);
 }
-.Card h2 {
-  font-size: 1.5rem;
-  text-align: center;
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: white;
+}
+
+.back {
+  background-color: white;
+  transform: rotateY(180deg);
 }
 .Card button {
   background-color: aquamarine;

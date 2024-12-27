@@ -3,7 +3,7 @@ import Home from './Home'
 import ErrorPage from './Error';
 import Favorites from './Favorites';
 import AddCards from './AddCards';
-import Team from './Team';
+import Search from './Search';
 
 const routes = [
     {
@@ -17,8 +17,8 @@ const routes = [
         element: <Favorites />,
     },
     {
-        path: "/team",
-        element: <Team />,
+        path: "/search",
+        element: <Search />,
 
     },
     {
