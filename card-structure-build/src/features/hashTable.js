@@ -111,7 +111,7 @@ export class HashTable {
     const bucket = this._buckets[this._hashFunction(cardName)];
     for (const card of bucket) {
       if (cardName === card.name) {
-        console.log(card);
+       
         return card;
       }
     }
@@ -132,9 +132,6 @@ export class HashTable {
     const cardList = this.getListFromTable();
 
     //Fisher–Yates shuffle
-    console.log(cardList);
-
-    
     for(let i = 0; i < cardList.length; i++){
 
       let randPosition = (Math.floor(Math.random()

@@ -9,7 +9,7 @@ function AddCards() {
             <header>
                 <NavBar />   
             </header>
-            <h1>Add Player Cards To Collection</h1>
+            <h1>Add Player To Collection</h1>
                 <Form />
             <Footer />
         </>

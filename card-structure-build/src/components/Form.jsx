@@ -61,31 +61,7 @@ export default function Form() {
         ev.preventDefault();
         hashtable.add(playerCard); 
 
-        //https://www.altcademy.com/blog/how-to-write-data-in-json-file-using-reactjs/
-        // let cardData = {
-        //     name: playerCard.name,
-        //     image: playerCard.image,
-        //     points: playerCard.points,
-        //     rebound: playerCard.rebounds,
-        //     assists: playerCard.assists,
-        //     accuracy: playerCard.accuracy
-        //   };
         
-        /*
-        let data = fs.readFileSync('players.json');
-        let players = JSON.parse(data);
-
-        players.push(cardData);
-        
-        console.log(fs);
-        //Write card to json file
-        fs.writeFile('players.json', JSON.stringify(players), function(err) {
-            if (err) {
-              console.log(err);
-            }
-          });
-        
-        */
         //Navigate back to home
         navigate("/");
         return;

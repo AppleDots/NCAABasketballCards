@@ -13,7 +13,7 @@ export default function SearchPlayer() {
 
     async function fetchCard() {
         const response = hashtable.findCardFromName(search);
-        console.log(response);
+        
         if (response === 0) {
             setCard(null);
         } else {
@@ -39,7 +39,12 @@ export default function SearchPlayer() {
                 />
             </form>
             <main>
+                
+                {card ? (
                 <CardGrid players={card ? [card] : []} />
+                    ) : (
+                <p>No player found.</p>
+            )}
             </main>
         </>
     );

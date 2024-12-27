@@ -41,7 +41,6 @@ function Home(){
     useEffect(() => {
         fetchPlayers();
        
-        console.log(hashtable);
       }, []);
     
       
@@ -61,14 +60,13 @@ function Home(){
     });
     useEffect(() => {
         setListOfPlayers(hashtable.getListFromTable());
-        console.log(hashtable);
+       
       }, [players]);
     
     //shuffle cards
     const handleSubmit = (ev) => {
         ev.preventDefault();
         setListOfPlayers(hashtable.shuffle());
-        console.log(listOfPlayers);
     };
 
     return(
